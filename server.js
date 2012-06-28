@@ -1,4 +1,5 @@
 var httpProxy = require('http-proxy');
+var port = process.env.PORT || 9200;
 var addresses = [
   {
     host: 'ec2-23-22-237-216.compute-1.amazonaws.com',
@@ -14,4 +15,4 @@ httpProxy.createServer(function (req, res, proxy) {
   var target = addresses.shift();
   proxy.proxyRequest(req, res, target);
   addresses.push(target);
-}).listen(9200);
+}).listen(port);
