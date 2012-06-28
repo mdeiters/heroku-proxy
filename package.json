@@ -2,7 +2,8 @@
   "name": "search-proxy",
   "version": "0.0.1",
   "dependencies": {
-    "http-proxy": "x.x.x"
+    "http-proxy": "x.x.x",
+    "http-digest": "x.x.x"    
   },
   "engines": {
     "node": "0.6.x"
