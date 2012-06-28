@@ -3,5 +3,9 @@ A really simple node.js round-robin proxy meant to run on Heroku to load balance
 To configure, make sure the ELASTIC_SEARCH_SERVERS is set:
 ELASTIC_SEARCH_SERVERS="SOME.IP.ADDRESS.compute-1.amazonaws.com,ANOTHER.IP.ADDRESS.compute-1.amazonaws.com"
 
+To run locally:
+ELASTIC_SEARCH_SERVERS="SOME.IP.ADDRESS.compute-1.amazonaws.com,ANOTHER.IP.ADDRESS.compute-1.amazonaws.com" node server.js 
+
+
 Todo
 Remove a dead server from the pool

@@ -1,13 +1,14 @@
 var httpProxy = require('http-proxy');
-var port      = process.env.PORT || 9200;
-var servers   = process.env.ELASTIC_SEARCH_SERVERS.split(/,/);
+var port      = process.env.PORT || 8080;
+var servers   = process.env.ELASTIC_SEARCH_SERVERS.split(",");
 var addresses = [];
 
-for(var server in servers){
-  addresses.push({
-    host: server,
+for(var index in servers){
+  console.log("Proxying " + servers[index]);
+  addresses[index] = {
+    host: servers[index],
     port: 9200
-  })
+  };
 }
 
 httpProxy.createServer(function (req, res, proxy) {
